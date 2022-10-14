@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MVCEST.Models.NotasEst>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de Estudiantes</h1>
+
+<p>
+    <a asp-action="Create">Agregar Estudiante</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdNotasEst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carnet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ipn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iipn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proyec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNotasEst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carnet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ipn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iipn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proyec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nf)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.IdNotasEst">Editar</a> |
+                <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.IdNotasEst">Detalles</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdNotasEst">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
